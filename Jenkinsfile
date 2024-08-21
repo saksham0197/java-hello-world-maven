@@ -24,7 +24,7 @@ pipeline {
 
         stage('SonarQube Analysis') {
             steps {
-                withSonarQubeEnv('SonarCloud') {
+                withSonarQubeEnv('SonarScanner') {
                     withCredentials([string(credentialsId: 'sonar_secret', variable: 'sonar_secret')]) {
                         sh "mvn sonar:sonar \
                             -Dsonar.projectKey=saksham0197_Rest_Api_projects_SpringBoot \
